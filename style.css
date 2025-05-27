@@ -1,0 +1,495 @@
+/* Global Styles */
+:root {
+    --primary-color: #007bff; /* Plava */
+    --secondary-color: #ffffff; /* Bijela */
+    --accent-red: #dc3545; /* Crvena */
+    --accent-green: #28a745; /* Zelena */
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --light-gray: #e9ecef;
+    --very-light-gray: #f5f5f5; /* Nova, još svjetlija nijansa sive */
+    --dark-gray: #343a40;
+    --logo-height: 60px; /* Visina logotipa */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Sprečava horizontalni scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #logo img {
+    height: 137px;
+    width: 137px;
+    vertical-align: middle;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-red);
+}
+
+/* Hero Section */
+.hero {
+    background: url('/images/360_F_235735196_PzxXqKFXNFhkJHJXE8rQzmsIrx7tKA5a.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 12, 12, 0.5); /* Tamni overlay za bolju čitljivost teksta */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.pazar-color { color: var(--primary-color); }
+.u-color { color: var(--accent-green); } /* Zelena boja za 'u' */
+.dzepu-color { color: var(--accent-red); }
+.space-char { color: var(--secondary-color); } /* Bijela boja za razmak */
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+/* Sections Styling */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--dark-gray);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 20px auto 0;
+}
+
+/* O Projektu Section */
+#o-projektu {
+    background-color: var(--secondary-color);
+}
+
+#o-projektu p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+}
+
+#o-projektu .icon {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Prednosti Section */
+#prednosti {
+    background-color: var(--light-gray); /* Vraćena pozadina na light-gray */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    background: var(--secondary-color); /* Pozadina itema sada bijela radi kontrasta */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.benefit-item .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Naša Aplikacija Section */
+#nasa-aplikacija {
+    background-color: var(--very-light-gray); /* Promijenjena pozadina na još svjetliju sivu */
+}
+
+.app-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.app-image {
+    flex: 1 1 300px; /* Fleksibilna širina, osnova 300px */
+    max-width: 350px;
+}
+
+.app-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* Dodavanje suptilne sjene */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app-description {
+    flex: 1 1 400px; /* Fleksibilna širina, osnova 400px */
+    text-align: left;
+    max-width: 600px;
+}
+
+.app-description h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.app-description p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* Call to Action Section */
+#cta {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 80px 0;
+}
+
+#cta h2 {
+    color: var(--secondary-color);
+}
+
+#cta h2::after {
+    background: var(--secondary-color);
+}
+
+#cta p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* Mailchimp Form Styling */
+#mc_embed_signup {
+    background: transparent; /* Uklanja Mailchimp pozadinu */
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+    width:100%;
+    max-width: 600px; /* Ograničava širinu forme */
+    margin: 0 auto; /* Centriranje forme */
+}
+
+#mc_embed_signup form {
+    padding: 0 !important; /* Uklanja Mailchimp padding */
+    text-align: center !important; /* Osigurava centriranje sadržaja forme */
+}
+
+#mc_embed_signup .mc-field-group {
+    margin-bottom: 15px;
+    width: 100% !important; /* Polja zauzimaju punu širinu */
+    padding: 0 !important;
+    min-height: auto !important;
+}
+
+#mc_embed_signup input.email {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    padding: 12px;
+    width: calc(100% - 26px); /* Prilagođava širinu uzimajući u obzir padding */
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin-bottom: 10px; /* Dodaje razmak ispod email polja */
+}
+
+#mc_embed_signup .clear {
+    display: flex;
+    justify-content: center;
+}
+
+#mc_embed_signup input.button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--secondary-color) !important; /* Koristi našu sekundarnu boju */
+    color: var(--primary-color) !important; /* Koristi našu primarnu boju za tekst */
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    height: auto !important;
+    width: auto !important; /* Omogućava da dugme zauzme potrebnu širinu */
+}
+
+#mc_embed_signup input.button:hover {
+    background-color: var(--accent-red) !important; /* Boja pri hoveru */
+    color: var(--secondary-color) !important;
+    transform: translateY(-2px);
+}
+
+
+
+/* Footer */
+
+footer {
+    background: var(--dark-gray);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Dodaje malo prostora iznad footera */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: var(--primary-color); /* Promjena boje linka u footeru */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#current-year {
+    font-weight: bold;
+}
+
+/* Scroll Animations */
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding-bottom: 10px; /* Dodaje malo prostora ispod logotipa */
+    }
+
+    header #logo {
+        margin-bottom: 15px;
+    }
+
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .app-showcase {
+        flex-direction: column;
+    }
+
+    .app-image,
+    .app-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .app-description {
+        margin-top: 20px;
+    }
+
+    #mc_embed_signup input.email {
+        width: 100%; /* Na manjim ekranima, email polje zauzima punu širinu */
+    }
+
+    #mc_embed_signup .clear {
+        justify-content: center;
+    }
+
+    #mc_embed_signup input.button {
+        width: auto; /* Dugme se prilagođava sadržaju */
+        padding: 12px 20px;
+    }
+
+    :root {
+        --logo-height: 50px; /* Manji logo na manjim ekranima */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .benefit-item {
+        padding: 20px;
+    }
+
+    .app-description h3 {
+        font-size: 1.6rem;
+    }
+
+    .app-description p {
+        font-size: 1rem;
+    }
+
+    :root {
+        --logo-height: 40px; /* Još manji logo na najmanjim ekranima */
+    }
+}
+
+
+
